@@ -1,17 +1,16 @@
-﻿using AbstractFactoryAnimals.Factory.Abstract;
-using AbstractFactoryAnimals.Factory.Concrete;
+﻿using AbstractFactoryAnimals.Factory.Concrete;
 using AbstractFactoryAnimals.Product.Abstract;
 
 namespace AbstractFactoryAnimals.Client
 {
     public class AnimalWorld
     {
-        private List<IHerbivoro> herbivores = new(); 
+        private List<IHerbivoro> herbivores = new();
         private List<ICarnivoro> carnivores = new();
- 
+
         public AnimalWorld()
         {
-            var animalsAfrica  = new Africa();
+            var animalsAfrica = new Africa();
             herbivores.Add(animalsAfrica.CreateHerbivoro());
             carnivores.Add(animalsAfrica.CreateCarnivoro());
 
@@ -21,13 +20,13 @@ namespace AbstractFactoryAnimals.Client
         }
         public void RunFoodchain()
         {
-            foreach(var carinvore in carnivores)
+            foreach (var carinvore in carnivores)
             {
-                foreach(var herbivore in herbivores)
+                foreach (var herbivore in herbivores)
                 {
-                    carinvore.Eat(herbivore); 
+                    carinvore.Eat(herbivore);
                 }
-            } 
+            }
         }
     }
 }
