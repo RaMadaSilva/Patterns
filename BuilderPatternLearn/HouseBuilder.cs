@@ -2,7 +2,7 @@
 
 namespace BuilderPatternLearn;
 
-public class EconomicHouseBuilder : IBuilder
+public class HouseBuilder : IBuilder
 {
     private House _house = new(); 
 
@@ -23,6 +23,10 @@ public class EconomicHouseBuilder : IBuilder
     public void AddNumberOfRoom(int number)
     {
         _house.NumberOfRoom = number;
+    }
+    public void AddSalao()
+    {
+
     }
      public House GetHouse()
     {
