@@ -1,7 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-using BuilderPatternLearn;
+﻿using BuilderPatternLearn;
 
 Console.WriteLine("Builder Pattern");
-Client client = new Client();
-client.Main(); 
+
+Director director = new Director();
+EconomicHouseBuilder economicHouseBuilder = new EconomicHouseBuilder();
+
+director.ConstructEconemicHouse(economicHouseBuilder);
+var result = economicHouseBuilder.GetHouse();
+Console.WriteLine(result); 
+
 Console.ReadKey(); 
